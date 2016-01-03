@@ -100,6 +100,25 @@ public class MySorts {
 	return output;
     }//end selectionSort -- O(?)
 
+ //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    public static void bogoSort(ArrayList<Comparable> data){
+	boolean ordered=false;
+	while (!ordered){
+	    for(int i=0;i<data.size()-1;i++){
+		if (data.get(i).compareTo(data.get(i+1))>0){
+		    ordered=false;
+		    break;
+		}
+		else {
+		    ordered=true;
+		}
+	    }
+	    if (!ordered){
+		shuffle(data);
+	    }
+	}
+    }
 
     public static void main( String [] args ) {
     }//end main
